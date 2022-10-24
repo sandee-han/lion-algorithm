@@ -10,7 +10,6 @@ public class SolveBracket {
         }
         return s.length() == 0;
     }
-
     public boolean solutionWithOutStack2(String s) {
         while(s.indexOf("()") >= 0){
             String[] splitted = s.split("\\(\\)");
@@ -18,7 +17,6 @@ public class SolveBracket {
         }
         return s.length() == 0;
     }
-
     public boolean solutionWithStack(String s) {
         Stack<Character> st=  new Stack<>();
         for (int i = 0; i < s.length(); i++) {
@@ -31,5 +29,4 @@ public class SolveBracket {
         }
         return st.empty();
     }
-
 }
