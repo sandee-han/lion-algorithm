@@ -1,4 +1,4 @@
-package hash;
+package hash.diy;
 
 public class HashTableDIY {
     private int size = 10000;
