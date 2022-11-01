@@ -26,7 +26,11 @@ public class PrepareTest {
                 }
             }
             System.out.println(Arrays.toString(memo));
-            
+
+            int temp = memo[0] >= memo[1] ? memo[0] : memo[1];
+            temp = temp >= memo[2] ? temp : memo[2];
+            int temp2 = 0;
+
             return new int[0];
         }
 
