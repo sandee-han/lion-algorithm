@@ -1,11 +1,11 @@
 package primenumber;
 
 public class PrimeNumber {
-    /*
-    1번 방법
-    입력 받고 자기보다 작은 수로 나누기
-     */
     public boolean solution1(int num) {
+        /*
+        1번 방법
+        입력 받고 자기보다 작은 수로 나누기
+         */
         for (int i = 2; i < num; i++) {
             if (num % i == 0) {
                 System.out.println("not a prime number");
