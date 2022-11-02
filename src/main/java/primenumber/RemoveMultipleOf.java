@@ -5,39 +5,27 @@ import java.util.List;
 
 public class RemoveMultipleOf {
 
-    int N = 50;
+    public int solution(int n) {
+        ArrayList<Integer> table = new ArrayList<>();
 
-    public ArrayList<Integer> putNumber(ArrayList<Integer> table) {
-        for (int i = 2; i < 50; i++) {
+        for (int i = 2; i < n; i++) {
             table.add(i);
         }
-        return table;
-    }
-
-    public ArrayList<Integer> removeMultipleOfTwo(ArrayList<Integer> table) {
-        for (int i = 2; i < table.size(); i++) {
-            if (table.get(i) % 2 == 0) {
-                table.remove(i);
+        for (int i = 2; i * i < n; i++) {
+            for (int j = 0; j < table.size(); j++) {
+                if (table.get(j) % i == 0 && table.get(j) > i) {
+                    table.remove(j);
+                }
             }
+            System.out.println(table.toString());
         }
-        return table;
-    }
-
-    public void show(ArrayList<Integer> table) {
-        System.out.println("size of table = " + table.size());
-        for (Integer integer : table) {
-            System.out.print(integer + " ");
-        }
+        return table.size();
     }
 
     public static void main(String[] args) {
-        int N = 50;
-        ArrayList<Integer> table = new ArrayList<>();
-
         RemoveMultipleOf rmo = new RemoveMultipleOf();
-        rmo.putNumber(table);
-        rmo.removeMultipleOfTwo(table);
-        rmo.show(table);
+        rmo.solution(300000);
+
     }
 
 }
