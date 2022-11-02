@@ -7,17 +7,18 @@ public class RemoveMultipleOf {
 
     public int solution(int n) {
         ArrayList<Integer> table = new ArrayList<>();
+        ArrayList<Boolean> check = new ArrayList<>();
 
         for (int i = 2; i < n; i++) {
             table.add(i);
+            check.add(i, true);
         }
         for (int i = 2; i * i < n; i++) {
             for (int j = 0; j < table.size(); j++) {
                 if (table.get(j) % i == 0 && table.get(j) > i) {
-                    table.remove(j);
+                    check.add(j, false);
                 }
             }
-            System.out.println(table.toString());
         }
         return table.size();
     }
