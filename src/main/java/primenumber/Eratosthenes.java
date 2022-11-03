@@ -11,14 +11,15 @@ public class Eratosthenes {
         Arrays.fill(checks, true); // checks를 true로 초기화
         for (int i = 0; i < nums.length; i++) nums[i] = i + 2; // 2~50까지 nums에 채우기
 
+        // 2의 배수 지우기
+        int multipleOf = 2;
+        for (int i = 0; i < nums.length; i+=2) {
+            checks[i] = false;
+        }
 
-        int num = 1;
-        int check = 0;
-
-        for (int i = 2; i <= 100; i++) {
-            check +=2;
-            num++;
-            System.out.printf("num: %d , check: %d\n", num, check);
+        // checks를 참고해서 true인 친구들만 nums[checks[i]]만 출력
+        for (int i = 0; i < nums.length; i++) {
+            if(checks[i] == true) System.out.printf("%d \t", nums[i]);
         }
 
     }
