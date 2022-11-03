@@ -17,15 +17,19 @@ public class RemoveMultipleOf {
             for (int j = 0; j < table.size(); j++) {
                 if (table.get(j) % i == 0 && table.get(j) > i) {
                     check.add(j, false);
+                } else {
+                    check.add(j, true);
                 }
             }
         }
+        System.out.println(check.toString());
         return table.size();
     }
 
     public static void main(String[] args) {
         RemoveMultipleOf rmo = new RemoveMultipleOf();
         rmo.solution(300000);
+
 
     }
 
