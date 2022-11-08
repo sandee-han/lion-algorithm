@@ -3,21 +3,17 @@ package search;
 public class BinarySearch {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-        int targetNum = 8;
-        // 중간값 찾기
-        int midNum = nums.length/2;
-        System.out.println(midNum);
+        int targetNum = 7;
+        int startIdx = 0;
+        int endIdx = nums.length - 1;
+        int midIdx = nums.length / 2;
+        int midValue = nums[midIdx];
 
-        // 인덱스(시작점, 끝점) 옮기기
-        while (midNum != targetNum){
-            if (midNum < targetNum) {
-                midNum = (nums.length + midNum) / 2;
-                System.out.println(midNum);
-            } else {
-                midNum = (nums.length - midNum) / 2;
-                System.out.println(midNum);
-            }
+        if (midValue > targetNum) {
+            startIdx = midIdx + 1;
+        } else if (midValue < targetNum) {
+            endIdx = midIdx - 1;
         }
-        System.out.println("final:" + midNum);
+
     }
 }
