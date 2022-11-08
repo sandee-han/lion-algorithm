@@ -9,14 +9,15 @@ public class BinarySearch {
         System.out.println(midNum);
 
         // 인덱스(시작점, 끝점) 옮기기
-        if (midNum < targetNum) {
-            midNum = (nums.length + midNum) / 2;
-            System.out.println(midNum);
-        } else {
-            midNum = (nums.length - midNum) / 2;
-            System.out.println(midNum);
+        while (midNum != targetNum){
+            if (midNum < targetNum) {
+                midNum = (nums.length + midNum) / 2;
+                System.out.println(midNum);
+            } else {
+                midNum = (nums.length - midNum) / 2;
+                System.out.println(midNum);
+            }
         }
-
-        // 같은지 비교하기
+        System.out.println("final:" + midNum);
     }
 }
