@@ -1,9 +1,6 @@
 package arraywithdivisor;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class ArrayWithDivisorDiy {
 
@@ -20,6 +17,22 @@ public class ArrayWithDivisorDiy {
         int[] answer = new int[list.size()];
         for(int i = 0; i < list.size(); i++){
             answer[i] = list.get(i);
+        }
+        return answer;
+    }
+
+    public int[] solution2(int[] arr, int divisor) {
+        PriorityQueue<Integer> list = new PriorityQueue<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % divisor == 0) list.add(arr[i]);
+        }
+
+        if(list.size() == 0) return new int[]{-1};
+
+        int[] answer = new int[list.size()];
+        int idx = 0;
+        while(!list.isEmpty()){
+            answer[idx++] = list.poll();
         }
         return answer;
     }
