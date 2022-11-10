@@ -1,34 +1,35 @@
 package duplicatearray;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class DuplicateArrayNumber {
-    public static void main(String[] args) {
-        int[] arr = new int[]{1, 1, 3, 3, 0, 1, 1};
+
+    public int[] solution(int []arr) {
+
         Queue<Integer> que = new LinkedList<>();
 
-        //  arr[0] 그냥 넣고
         que.offer(arr[0]);
-
-//        // arr[1] 넣기전 이전 값과 동일한지 확인
-//        if (arr[1] != arr[0]) que.offer(arr[1]);
-//
-//        // arr[2] 넣기 전 이전 값과 동일한지 확인
-//        if (arr[2] != arr[1]) que.offer(arr[2]);
-
-        // for문으로 정리
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] != arr[i - 1]) que.offer(arr[i]);
         }
+        int[] answer = new int[que.size()];
 
-        Iterator iter = que.iterator();
+        for (int i = 0; i < que.size(); i++) {
+            System.out.print(que.peek() + " ");
+            answer[i] = que.poll();
+        }
 
-        System.out.println("[");
-        while (iter.hasNext())
-            System.out.print(iter.next() + " ");
-        System.out.println("]");
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 1, 3, 3, 0, 1, 1};
+        DuplicateArrayNumber dan = new DuplicateArrayNumber();
+        System.out.println(Arrays.toString(dan.solution(arr)));
+
     }
 
 }
