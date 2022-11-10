@@ -17,8 +17,7 @@ public class DuplicateArrayNumber {
         }
         int[] answer = new int[que.size()];
 
-        for (int i = 0; i < que.size(); i++) {
-            System.out.print(que.peek() + " ");
+        for (int i = 0; i < answer.length; i++) {
             answer[i] = que.poll();
         }
 
@@ -28,7 +27,8 @@ public class DuplicateArrayNumber {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 1, 3, 3, 0, 1, 1};
         DuplicateArrayNumber dan = new DuplicateArrayNumber();
-        System.out.println(Arrays.toString(dan.solution(arr)));
+        int[] test = dan.solution(arr);
+        System.out.println(Arrays.toString(test));
 
     }
 
