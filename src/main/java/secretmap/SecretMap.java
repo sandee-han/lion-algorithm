@@ -41,14 +41,17 @@ public class SecretMap {
         int[] arr1 = {9, 20, 28, 18, 11};
         int[] arr2 = {30, 1, 21, 17, 28};
 
-        String[][] compare = new String[n][n];
+        String[] compare = new String[n];
 
-        String binaryNum1 = sm.convertToBinary(arr1[0]);
-        String binaryNum2 = sm.convertToBinary(arr2[0]);
+        for (int i = 0; i < n; i++) {
+            compare[i] = Integer.toBinaryString(arr1[i] | arr2[i]);
+            System.out.printf("%s ", compare[i]);
+        }
 
-        compare[0][0] = Integer.toBinaryString(arr1[0] | arr2[0]);
 
-        System.out.println(compare[0][0]);
+
+
+
 
     }
 
