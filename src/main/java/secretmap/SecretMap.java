@@ -1,5 +1,7 @@
 package secretmap;
 
+import java.util.Arrays;
+
 public class SecretMap {
 
     /*
@@ -17,8 +19,15 @@ public class SecretMap {
 
     public static void main(String[] args) {
         int n = 5;
+        int[] arr1 = {9, 20, 28, 18, 11};
+        int[] arr2 = {30, 1, 21, 17, 28};
 
-        String nBinary = Integer.toBinaryString(n);
+        String numBinary = Integer.toBinaryString(arr1[0]);
+        String[] arr1Binary = numBinary.split("");
+
+        System.out.println(Arrays.toString(arr1Binary));
+        // 자릿수가 모자라면 어떻게 채우는가
+
 
 
     }
