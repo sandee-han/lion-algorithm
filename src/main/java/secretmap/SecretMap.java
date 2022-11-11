@@ -17,8 +17,14 @@ public class SecretMap {
 
      */
 
-    public String convertToBinary1(int num) {
+    public String convertToBinary(int num) {
         String binaryNum = Integer.toBinaryString(num);
+
+        // 이진수 자릿수 해결
+        while(binaryNum.length() < 5) {
+            binaryNum = "0" + binaryNum;
+        }
+
         return binaryNum;
     }
 
@@ -39,12 +45,12 @@ public class SecretMap {
         int[] arr1 = {9, 20, 28, 18, 11};
         int[] arr2 = {30, 1, 21, 17, 28};
 
-        String numBinary = Integer.toBinaryString(arr1[1]);
+        String numBinary = Integer.toBinaryString(arr1[0]);
         String[] arr1Binary = numBinary.split("");
 
         System.out.println(Arrays.toString(arr1Binary));
-        // 자릿수가 모자라면 어떻게 채우는가
-        System.out.println(sm.convertToBinaryDiy(20));
+        System.out.println(sm.convertToBinaryDiy(9));
+        System.out.println(sm.convertToBinary(9));
 
 
     }
