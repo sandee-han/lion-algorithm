@@ -45,10 +45,10 @@ public class SecretMap {
 
         for (int i = 0; i < n; i++) {
             compare[i] = Integer.toBinaryString(arr1[i] | arr2[i]);
+            compare[i] = compare[i].replace("1", "#");
+            compare[i] = compare[i].replace("0", " ");
             System.out.printf("%s ", compare[i]);
         }
-
-
 
 
 
