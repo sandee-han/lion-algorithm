@@ -18,6 +18,7 @@ public class EratosthenesReview {
             for (int i = j; i < N - 1; i++) {
                 if (arr[i] % j == 0) {
                     check[i] = false;
+                    arr[i] = 0;
                 }
             }
         }
