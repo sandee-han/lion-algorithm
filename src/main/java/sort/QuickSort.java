@@ -38,11 +38,7 @@ public class QuickSort {
         System.out.println("merge: " + merge(left, mid, right));
         System.out.println();
 
-        if (left.size() <= 1) {
-            return merge(left, mid, sort(right));
-        } else {
-            return merge(sort(left), mid, right);
-        }
+        return merge(sort(left), mid, sort(right));
     }
 
     public static void main(String[] args) {
