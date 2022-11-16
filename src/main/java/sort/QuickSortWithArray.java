@@ -5,22 +5,11 @@ public class QuickSortWithArray {
         var arr = new int[]{20, 18, 5, 19, 5, 25, 40, 50};
         int pivot = arr[arr.length / 2];
         int leftIdx = 0;
-        int rightIdx = arr.length - 1;
-        int tmp;
+        System.out.println(pivot);
 
-        while (arr[leftIdx] < pivot) {
-            leftIdx++;
-        }
-        tmp = pivot;
-        pivot = arr[leftIdx];
-        arr[leftIdx] = tmp;
+        while (arr[leftIdx] < pivot) leftIdx += 1;
 
-        while (arr[rightIdx] > pivot) {
-            rightIdx--;
-        }
-        tmp = pivot;
-        pivot = arr[rightIdx];
-        arr[rightIdx] = tmp;
+
 
 
     }
