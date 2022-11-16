@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 public class QuickSortWithArrayDIY {
     public static void main(String[] args) {
         var arr = new int[]{20, 18, 5, 19, 5, 25, 40, 50};
@@ -18,8 +20,23 @@ public class QuickSortWithArrayDIY {
         leftIdx += 1;
         rightIdx -= 1;
 
+        System.out.println(Arrays.toString(arr));
 
+        tmp = arr[leftIdx];
+        arr[leftIdx] = arr[rightIdx];
+        arr[rightIdx] = tmp;
+        leftIdx += 1;
+        rightIdx -= 1;
 
+        System.out.println(Arrays.toString(arr));
+
+        tmp = arr[leftIdx];
+        arr[leftIdx] = arr[rightIdx];
+        arr[rightIdx] = tmp;
+        leftIdx += 1;
+        rightIdx -= 1;
+
+        System.out.println(Arrays.toString(arr));
 
     }
 }
