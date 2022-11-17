@@ -10,33 +10,18 @@ public class QuickSortWithArrayDIY {
         int rightIdx = arr.length - 1;
         int tmp;
 
-        while (arr[leftIdx] < pivot) leftIdx += 1;
+        while (leftIdx <= rightIdx) {
+            while (arr[leftIdx] < pivot) leftIdx += 1;
+            while (arr[rightIdx] > pivot) rightIdx -= 1;
 
-        while (arr[rightIdx] > pivot) rightIdx -= 1;
+            tmp = arr[leftIdx];
+            arr[leftIdx] = arr[rightIdx];
+            arr[rightIdx] = tmp;
+            leftIdx += 1;
+            rightIdx -= 1;
 
-        tmp = arr[leftIdx];
-        arr[leftIdx] = arr[rightIdx];
-        arr[rightIdx] = tmp;
-        leftIdx += 1;
-        rightIdx -= 1;
-
-        System.out.println(Arrays.toString(arr));
-
-        tmp = arr[leftIdx];
-        arr[leftIdx] = arr[rightIdx];
-        arr[rightIdx] = tmp;
-        leftIdx += 1;
-        rightIdx -= 1;
-
-        System.out.println(Arrays.toString(arr));
-
-        tmp = arr[leftIdx];
-        arr[leftIdx] = arr[rightIdx];
-        arr[rightIdx] = tmp;
-        leftIdx += 1;
-        rightIdx -= 1;
-
-        System.out.println(Arrays.toString(arr));
+            System.out.println(Arrays.toString(arr));
+        }
 
     }
 }
