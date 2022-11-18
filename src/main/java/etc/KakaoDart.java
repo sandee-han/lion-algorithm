@@ -6,11 +6,16 @@ import java.util.List;
 
 public class KakaoDart {
     public int solution(String dartResult) {
+        // 2트
+
         int answer = 0;
         return answer;
     }
 
+
+
     public int solutionFailed(String dartResult) {
+        // 틀렸다. 다시풀자.
 //        결국 수식을 만드는 과정
 //
 //        숫자형 앞에는 `+`가 붙는다.
