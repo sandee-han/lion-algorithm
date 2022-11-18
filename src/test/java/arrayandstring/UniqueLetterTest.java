@@ -1,9 +1,8 @@
 package arrayandstring;
 
+import array.arrayandstring.arrayandstring.UniqueLetter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class UniqueLetterTest {
 

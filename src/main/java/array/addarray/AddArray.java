@@ -1,4 +1,4 @@
-package addarray;
+package array.addarray;
 
 import java.util.Arrays;
 
