@@ -7,21 +7,23 @@ public class CaesarCipher {
         String answer = "";
         int[] arr = new int[s.length()];
 
-        // 대문자 구분 ascii 65 ~ 90
-        if((int)s.charAt(0) > 64 && (int)s.charAt(0) < 91) {
-            if((int)s.charAt(0) + n > 90) {
-                arr[0] = (int)s.charAt(0) + n - 26;
-            } else {
-                arr[0] = ((int)s.charAt(0) + n);
+        for (int i = 0; i < s.length(); i++) {
+            // 대문자 구분 ascii 65 ~ 90
+            if((int)s.charAt(i) > 64 && (int)s.charAt(i) < 91) {
+                if((int)s.charAt(i) + n > 90) {
+                    arr[i] = (int)s.charAt(i) + n - 26;
+                } else {
+                    arr[i] = ((int)s.charAt(i) + n);
+                }
             }
-        }
 
-        // 소문자 구분
-        if((int)s.charAt(0) > 96 && (int)s.charAt(0) < 123) {
-            if((int)s.charAt(0) + n > 123) {
-                arr[0] = (int)s.charAt(0) + n - 26;
-            } else {
-                arr[0] = ((int)s.charAt(0) + n);
+            // 소문자 구분
+            if((int)s.charAt(i) > 96 && (int)s.charAt(i) < 123) {
+                if((int)s.charAt(i) + n > 123) {
+                    arr[i] = (int)s.charAt(i) + n - 26;
+                } else {
+                    arr[i] = ((int)s.charAt(i) + n);
+                }
             }
         }
 
