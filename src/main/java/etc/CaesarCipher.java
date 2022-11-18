@@ -28,18 +28,24 @@ public class CaesarCipher {
         }
 
         System.out.println(Arrays.toString(arr));
+        // 배열을 문자열로 입력
         for (int i = 0; i < arr.length; i++) {
-            sb.append((char)arr[i]);
+            if (arr[i] != 0) {
+                sb.append((char)arr[i]);
+            } else {
+                sb.append(" ");
+            }
         }
         String answer = sb.toString();
         System.out.println("answer: " + answer);
         return answer;
+
     }
 
     public static void main(String[] args) {
         CaesarCipher caesarCipher = new CaesarCipher();
-        String input = "A B z";
-        int num = 1;
+        String input = "a B z";
+        int num = 4;
 
         caesarCipher.solution(input, num);
     }
