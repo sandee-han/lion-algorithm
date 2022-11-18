@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CaesarCipher {
     public String solution(String s, int n) {
-        String answer = "";
+        StringBuilder sb = new StringBuilder();
         int[] arr = new int[s.length()];
 
         for (int i = 0; i < s.length(); i++) {
@@ -19,7 +19,7 @@ public class CaesarCipher {
 
             // 소문자 구분
             if((int)s.charAt(i) > 96 && (int)s.charAt(i) < 123) {
-                if((int)s.charAt(i) + n > 123) {
+                if((int)s.charAt(i) + n > 122) {
                     arr[i] = (int)s.charAt(i) + n - 26;
                 } else {
                     arr[i] = ((int)s.charAt(i) + n);
@@ -28,9 +28,11 @@ public class CaesarCipher {
         }
 
         System.out.println(Arrays.toString(arr));
-
-
-
+        for (int i = 0; i < arr.length; i++) {
+            sb.append((char)arr[i]);
+        }
+        String answer = sb.toString();
+        System.out.println("answer: " + answer);
         return answer;
     }
 
