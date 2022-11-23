@@ -16,7 +16,7 @@ public class Factorial {
         int input = Integer.parseInt(br.readLine());
 
         Factorial factorial = new Factorial();
-        int result = factorial.multiple(5);
+        int result = factorial.multiple(input);
         System.out.println(result);
     }
 }
