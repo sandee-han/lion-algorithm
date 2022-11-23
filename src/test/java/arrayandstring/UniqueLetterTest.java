@@ -1,6 +1,6 @@
 package arrayandstring;
 
-import array.arrayandstring.arrayandstring.UniqueLetter;
+import array.arrayandstring.UniqueLetter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
