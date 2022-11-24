@@ -1,5 +1,9 @@
 package recursive;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class RecursivePrintStar {
 
     int count = 1;
@@ -31,9 +35,10 @@ public class RecursivePrintStar {
         printLine(n - 1);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         RecursivePrintStar recursivePrintStar = new RecursivePrintStar();
-        int input = 10;
+        int input = Integer.parseInt(br.readLine());
         recursivePrintStar.printLine(input);
     }
 
