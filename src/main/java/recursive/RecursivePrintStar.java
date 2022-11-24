@@ -2,7 +2,7 @@ package recursive;
 
 public class RecursivePrintStar {
 
-    static int count = 1;
+    int count = 1;
     public static int printStar(int n) {
         System.out.print("*");
         if (n == 1) {
@@ -11,17 +11,18 @@ public class RecursivePrintStar {
         return printStar(n - 1);
     }
 
-    public static int printLine(int n) {
+    public void printLine(int n) {
         printStar(count);
-        System.out.printf("\n%d 출력: ", count + 1);
-        printLine(count++);
-        if (count > n) return 0;
-        return 0;
+        System.out.println();
+        count++;
+        if (n == 1) return;
+        printLine(n - 1);
     }
 
     public static void main(String[] args) {
-        int input = 5;
-        printLine(input);
+        RecursivePrintStar recursivePrintStar = new RecursivePrintStar();
+        int input = 10;
+        recursivePrintStar.printLine(input);
     }
 
 }
