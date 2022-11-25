@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class GcdWithRecursive {
-    public static int[] Gcd(int[] inputArr) {
+    public static int[] GcdRecursive(int[] inputArr) {
         if (inputArr[0] > inputArr[1]) {
             inputArr[0] = inputArr[0] - inputArr[1];
         } else if (inputArr[0] < inputArr[1]) {
@@ -15,14 +15,14 @@ public class GcdWithRecursive {
             Arrays.sort(inputArr);
             return inputArr;
         }
-        return Gcd(inputArr);
+        return GcdRecursive(inputArr);
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] input = br.readLine().split(" ");
         int[] inputArr = {Integer.parseInt(input[0]), Integer.parseInt(input[1])};
-        inputArr = Gcd(inputArr);
+        inputArr = GcdRecursive(inputArr);
         System.out.println(inputArr[0]);
     }
 }
