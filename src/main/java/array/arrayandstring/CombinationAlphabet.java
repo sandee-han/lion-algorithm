@@ -11,24 +11,32 @@ public class CombinationAlphabet {
         }
     }
 
+    public static char oneLetterRecursive(char ch) {
+        System.out.println(ch);
+        if (ch == (char)90) return ch;
+        oneLetterRecursive((char)(ch + 1));
+        return ch;
+    }
+
     public static void twoLetters() {
         char[] array1 = new char[26];
         char[] array2 = new char[26];
-        int count;
+        int count1 = 0;
+
         for (int i = 65; i < 91; i++) {
-            count = i - 65;
-            array1[count] = (char)i;
-            System.out.print(array1[count]);
+            int count2 = 0;
+            array1[count1] = (char)i;
+            count1++;
             for (int j = 65; j < 91; j++) {
-                array2[count] = (char)j;
-                System.out.println(array2[count]);
-                count++;
+                array2[count2] = (char)j;
+                System.out.print(array1[count1]);
+                System.out.println(array2[count2]);
+                count2++;
             }
         }
     }
 
     public static void main(String[] args) {
-        oneLetter();
-        twoLetters();
+        oneLetterRecursive('A');
     }
 }
