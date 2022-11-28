@@ -18,20 +18,20 @@ public class CombinationAlphabet {
         return ch;
     }
 
-    public static void printAlphabet(String prefix) {
-        if (prefix.length() > 3) return;
+    public static void printAlphabet(String prefix, int depth) {
+        if (prefix.length() > depth) return;
 
-        if (prefix.length() == 3) {
+        if (prefix.length() == depth) {
             System.out.println(prefix);
         }
 
         for (char c = 'A'; c <= 'Z' ; c++) {
-            printAlphabet(prefix + c);
+            printAlphabet(prefix + c, depth);
         }
     }
 
     public static void main(String[] args) {
 //        oneLetterRecursive('A');
-        printAlphabet("");
+        printAlphabet("", 3);
     }
 }
