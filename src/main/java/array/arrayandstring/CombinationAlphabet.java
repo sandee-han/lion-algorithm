@@ -18,25 +18,20 @@ public class CombinationAlphabet {
         return ch;
     }
 
-    public static void twoLetters() {
-        char[] array1 = new char[26];
-        char[] array2 = new char[26];
-        int count1 = 0;
+    public static void printAlphabet(String prefix) {
+        if (prefix.length() > 3) return;
 
-        for (int i = 65; i < 91; i++) {
-            int count2 = 0;
-            array1[count1] = (char)i;
-            count1++;
-            for (int j = 65; j < 91; j++) {
-                array2[count2] = (char)j;
-                System.out.print(array1[count1]);
-                System.out.println(array2[count2]);
-                count2++;
-            }
+        if (prefix.length() == 3) {
+            System.out.println(prefix);
+        }
+
+        for (char c = 'A'; c <= 'Z' ; c++) {
+            printAlphabet(prefix + c);
         }
     }
 
     public static void main(String[] args) {
-        oneLetterRecursive('A');
+//        oneLetterRecursive('A');
+        printAlphabet("");
     }
 }
