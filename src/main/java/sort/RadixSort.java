@@ -9,7 +9,16 @@ public class RadixSort {
         for (int i = 0; i < arr.length; i++) {
             indexArr[arr[i]] = arr[i];
         }
-        return indexArr;
+        int count = 1;
+        arr[0] = 0;
+        for (int i = 0; i < indexArr.length; i++) {
+            if (indexArr[i] != 0) {
+                arr[count] = indexArr[i];
+                count++;
+            }
+        }
+
+        return arr;
     }
 
     public static void main(String[] args) {
