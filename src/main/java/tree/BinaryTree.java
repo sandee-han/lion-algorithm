@@ -1,5 +1,8 @@
 package tree;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class BinaryTree {
@@ -10,7 +13,9 @@ public class BinaryTree {
             return goUp(a, b / 2) + 1;
         } else return 0;
     }
-    public static void main(String[] args) {
-        System.out.println(goUp(9, 4));
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = br.readLine().split(" ");
+        System.out.println(goUp(Integer.parseInt(input[0]),Integer.parseInt(input[1])));
     }
 }
