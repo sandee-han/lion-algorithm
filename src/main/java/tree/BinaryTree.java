@@ -3,20 +3,14 @@ package tree;
 import java.util.Arrays;
 
 public class BinaryTree {
-    public static int getDistance(int[] arr) {
-        Arrays.sort(arr);
-        // 제일 하단 까지의 거리 checkBelow recursive로 측정
-        
+    public static int goUp(int a, int b) {
+        if (a > b) {
+            return goUp(a / 2, b) + 1;
+        } else if (a < b) {
+            return goUp(a, b / 2) + 1;
+        } else return 0;
     }
-    
-    // 재귀로 2n 인지 확인?
-    public static int checkBelow(int upper, int length, int count) {
-        if (checkBelow(upper) >= length) return count;
-
-    }
-
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3};
-        System.out.println(getDistance(arr));
+        System.out.println(goUp(9, 4));
     }
 }
