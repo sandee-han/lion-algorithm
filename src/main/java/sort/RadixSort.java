@@ -1,10 +1,9 @@
 package sort;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.util.*;
 
 public class RadixSort {
-    public static int[] radix(int[] arr) {
+    public static int[] radixOne(int[] arr) {
         int[] indexArr = new int[10];
         for (int i = 0; i < arr.length; i++) {
             indexArr[arr[i]] = arr[i];
@@ -17,13 +16,25 @@ public class RadixSort {
                 count++;
             }
         }
-
         return arr;
     }
 
+    public static int[] radixTwo(int[] arr) {
+        Queue<Integer>[] queueArr = new Queue[10];
+        for (int i = 0; i < queueArr.length; i++) {
+            queueArr[i] = new ArrayDeque<>();
+        }
+        for (int i = 0; i < arr.length; i++) {
+            int digit = (int)Math.pow(10, 0);
+            queueArr[Math.floorDiv(arr[i], digit) % 10].add(arr[i]);
+        }
+        return new int[10];
+    }
+
+
     public static void main(String[] args) {
         int[] arr = {7,4,5,9,1,0};
-        int[] sorted = radix(arr);
+        int[] sorted = radixOne(arr);
         System.out.println(Arrays.toString(sorted));
     }
 }
