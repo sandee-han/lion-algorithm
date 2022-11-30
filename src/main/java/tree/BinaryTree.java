@@ -10,8 +10,9 @@ public class BinaryTree {
     }
     
     // 재귀로 2n 인지 확인?
-    public static int checkBelow(int upper) {
-        
+    public static int checkBelow(int upper, int length, int count) {
+        if (checkBelow(upper) >= length) return count;
+
     }
 
     public static void main(String[] args) {
