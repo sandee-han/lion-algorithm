@@ -35,6 +35,10 @@ public class MakeSameString {
     public static void main(String[] args) {
         String q = "가나라";
         String p = "가나다";
-        System.out.println(isOneEditAway(q, p));
+//        System.out.println(isOneEditAway(q, p));
+        System.out.println("tank, tanc: " + isOneEditAway("tank", "tanc"));
+        System.out.println("tnk, tank: " + isOneEditAway("tnk", "tank"));
+        System.out.println("tank, tinck: " + isOneEditAway("tank", "tinck"));
+        System.out.println("tank, tankist: " + isOneEditAway("tank", "tankist"));
     }
 }
