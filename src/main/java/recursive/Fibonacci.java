@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fibonacci {
-    int count(int num) {
+    public static Long count(int num) {
         if(num == 1 || num == 2) {
-            return 1;
+            return 1l;
         }
-        List<Integer> fibonacciNums = new ArrayList<>();
-        fibonacciNums.add(1);
-        fibonacciNums.add(1);
+        List<Long> fibonacciNums = new ArrayList<>();
+        fibonacciNums.add(1l);
+        fibonacciNums.add(1l);
         for (int i = 2; i < num; i++) {
             fibonacciNums.add(fibonacciNums.get(i - 1) + fibonacciNums.get(i - 2));
         }
@@ -38,6 +38,6 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(count(50));
     }
 }
