@@ -5,13 +5,26 @@ import java.util.*;
 public class TwoSum {
     // 2트
     // Map을 쓰라는 힌트를 봤다.
+    // 오키 성공
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            map.put(i, target - nums[i]);
+            map.put(nums[i], i);
         }
 
-        return nums;
+        int[] answer = new int[2];
+        int count = 0;
+
+        while (answer[1] == 0) {
+            if (map.containsKey(target - nums[count]) && count != map.get(target - nums[count])) {
+                answer[0] = count;
+                answer[1] = map.get(target - nums[count]);
+                break;
+            }
+            count++;
+        }
+
+        return answer;
     }
 
     // List의 contains 사용
