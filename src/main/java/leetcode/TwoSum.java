@@ -3,6 +3,25 @@ package leetcode;
 import java.util.*;
 
 public class TwoSum {
+    // 3트
+    // 4달만에 다시풀기
+    public int[] twoSum3(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        int[] answer = new int[2];
+        int count = 0;
+        while (true) {
+            if (map.containsKey(target - nums[count])) {
+                answer[0] = map.get(target - nums[count]);
+                answer[1] = count;
+                break;
+            }
+            map.put(nums[count], count);
+            count++;
+        }
+        return answer;
+    }
+
     // 2트
     // Map을 쓰라는 힌트를 봤다.
     // 오키 성공
@@ -27,6 +46,7 @@ public class TwoSum {
         return answer;
     }
 
+    // 1트
     // List의 contains 사용
     // 매우 느리다.
     public int[] twoSum2(int[] nums, int target) {
@@ -69,15 +89,15 @@ public class TwoSum {
 
     public static void main(String[] args) {
         TwoSum ts = new TwoSum();
-        int[] arr1 = {11, 2, 7, 15}; // target: 9
+        int[] arr1 = {11, 7, 2, 15}; // target: 9
         int[] arr2 = {3, 2, 4}; // target: 6
         int[] arr3 = {3, 3};
         int[] arr4 = {3, 2, 3};
 
-        int[] test1 = ts.twoSum(arr1, 9);
-        int[] test2 = ts.twoSum(arr2, 6);
-        int[] test3 = ts.twoSum(arr3, 6);
-        int[] test4 = ts.twoSum(arr4, 6);
+        int[] test1 = ts.twoSum3(arr1, 9);
+        int[] test2 = ts.twoSum3(arr2, 6);
+        int[] test3 = ts.twoSum3(arr3, 6);
+        int[] test4 = ts.twoSum3(arr4, 6);
 
         System.out.println(Arrays.toString(test1));
         System.out.println(Arrays.toString(test2));

@@ -7,36 +7,28 @@ import java.util.Map;
 // LeetCode #121
 public class BestTimeStock {
     public static int maxProfit(int[] prices) {
-        Map<Integer, Integer> priceMap = new HashMap<>();
+        int L = 0;
+        int R = 1;
+        int maxValue = 0;
 
-        // Map에 기존 prices 저장
-        for (int i = 0; i < prices.length; i++) {
-            priceMap.put(prices[i], i);
-        }
-
-        // 오름차순 정렬
-        Arrays.sort(prices);
-
-        int smallIdx = 0;
-        int bigIdx = prices.length - 1;
-
-        while (smallIdx < prices.length) {
-            while (bigIdx > smallIdx) {
-                if (priceMap.get(prices[smallIdx]) < priceMap.get(prices[bigIdx])) {
-                    return prices[bigIdx] - prices[smallIdx];
-                }
-                bigIdx--;
+        while (R < prices.length) {
+            if (prices[R] > prices[L]) {
+                maxValue = Math.max(maxValue, prices[R] - prices[L]);
+            } else {
+                L = R;
             }
-            bigIdx = prices.length - 1;
-            smallIdx++;
+            R++;
         }
-        return 0;
+        return maxValue;
     }
 
     public static void main(String[] args) {
         int[] prices1 = {7,1,5,3,6,4};
         int[] prices2 = {3,2,6,5,0,3};
+        int[] prices3 = {7,6,4,3,1};
 
+        System.out.println(maxProfit(prices1));
         System.out.println(maxProfit(prices2));
+        System.out.println(maxProfit(prices3));
     }
 }

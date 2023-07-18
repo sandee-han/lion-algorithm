@@ -39,5 +39,10 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         System.out.println(count(50));
+
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        int[] arr = new int[5];
+        arr[0] = 5;
     }
 }
